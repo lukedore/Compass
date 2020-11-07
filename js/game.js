@@ -5,8 +5,10 @@ let gameScene = new Phaser.Scene('Game');
 let resultsText = [50];
 
 gameScene.init = function() {
+  submitted = false;
   this.words = [{
       key: 'Animalwelfare',
+      id: 0,
       setXY: {
         x: 605,
         y: 5
@@ -16,10 +18,12 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 33,
-      answerY: 5
+      answerY: 5,
+      hoverText: 'mouse over text 789%'
     },
     {
       key: 'Budgets',
+      id: 1,
       setXY: {
         x: 605,
         y: 30
@@ -29,10 +33,12 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 520,
-      answerY: 50
+      answerY: 50,
+      hoverText: '444'
     },
     {
       key: 'Cleanair',
+      id: 2,
       setXY: {
         x: 725,
         y: 155
@@ -42,10 +48,12 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 166,
-      answerY: 5
+      answerY: 5,
+      hoverText: '2343242'
     },
     {
       key: 'Communitygroups',
+      id: 3,
       setXY: {
         x: 605,
         y: 55
@@ -53,10 +61,14 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 90,
+      answerY: 520,
+      hoverText: 'asdfasdf'
     },
     {
       key: 'Culturaltraditions',
+      id: 4,
       setXY: {
         x: 605,
         y: 80
@@ -64,10 +76,14 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 335,
+      answerY: 520,
+      hoverText: 'sadfasdf'
     },
     {
       key: 'Development',
+      id: 5,
       setXY: {
         x: 605,
         y: 105
@@ -77,10 +93,12 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 455,
-      answerY: 140
+      answerY: 150,
+      hoverText: '234sdfsdf'
     },
     {
       key: 'Earthsmaterials',
+      id: 6,
       setXY: {
         x: 605,
         y: 180
@@ -94,6 +112,7 @@ gameScene.init = function() {
     },
     {
       key: 'Education',
+      id: 7,
       setXY: {
         x: 710,
         y: 105
@@ -101,10 +120,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 250,
+      answerY: 560
     },
     {
       key: 'Employment',
+      id: 8,
       setXY: {
         x: 605,
         y: 130
@@ -114,10 +136,11 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 415,
-      answerY: 165
+      answerY: 175
     },
     {
       key: 'Enlightenment',
+      id: 9,
       setXY: {
         x: 605,
         y: 155
@@ -125,10 +148,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 310
     },
     {
       key: 'Equity',
+      id: 10,
       setXY: {
         x: 745,
         y: 55
@@ -142,6 +168,7 @@ gameScene.init = function() {
     },
     {
       key: 'Factories',
+      id: 11,
       setXY: {
         x: 705,
         y: 130
@@ -151,10 +178,11 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 515,
-      answerY: 165
+      answerY: 175
     },
     {
       key: 'Family',
+      id: 12,
       setXY: {
         x: 743,
         y: 480
@@ -162,10 +190,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 90
     },
     {
       key: 'Governments',
+      id: 13,
       setXY: {
         x: 605,
         y: 205
@@ -174,11 +205,12 @@ gameScene.init = function() {
       savey: 0,
       compass: '',
       answer: 'society',
-      answerX: 350,
-      answerY: 500
+      answerX: 120,
+      answerY: 480
     },
     {
       key: 'Habitat',
+      id: 14,
       setXY: {
         x: 735,
         y: 180
@@ -192,6 +224,7 @@ gameScene.init = function() {
     },
     {
       key: 'Happiness',
+      id: 15,
       setXY: {
         x: 710,
         y: 205
@@ -199,10 +232,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 215
     },
     {
       key: 'Health',
+      id: 16,
       setXY: {
         x: 733,
         y: 5
@@ -210,10 +246,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 130
     },
     {
       key: 'Humanrights',
+      id: 17,
       setXY: {
         x: 605,
         y: 255
@@ -221,10 +260,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 70,
+      answerY: 560
     },
     {
       key: 'Identity',
+      id: 18,
       setXY: {
         x: 735,
         y: 405
@@ -232,10 +274,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 460
     },
     {
       key: 'Individualfulfillment',
+      id: 19,
       setXY: {
         x: 605,
         y: 230
@@ -243,10 +288,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 390
     },
     {
       key: 'Individualopportunity',
+      id: 20,
       setXY: {
         x: 605,
         y: 255
@@ -254,10 +302,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 350
     },
     {
       key: 'Jobsandwages',
+      id: 21,
       setXY: {
         x: 605,
         y: 280
@@ -267,10 +318,11 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 375,
-      answerY: 205
+      answerY: 225
     },
     {
       key: 'Labor',
+      id: 22,
       setXY: {
         x: 733,
         y: 280
@@ -280,10 +332,11 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 520,
-      answerY: 205
+      answerY: 225
     },
     {
       key: 'Land',
+      id: 23,
       setXY: {
         x: 757,
         y: 230
@@ -297,6 +350,7 @@ gameScene.init = function() {
     },
     {
       key: 'Legalframeworks',
+      id: 24,
       setXY: {
         x: 605,
         y: 305
@@ -305,11 +359,12 @@ gameScene.init = function() {
       savey: 0,
       compass: '',
       answer: 'society',
-      answerX: 370,
-      answerY: 320
+      answerX: 320,
+      answerY: 480
     },
     {
       key: 'Leisure',
+      id: 25,
       setXY: {
         x: 740,
         y: 80
@@ -317,10 +372,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 170
     },
     {
       key: 'Markets',
+      id: 26,
       setXY: {
         x: 725,
         y: 355
@@ -334,6 +392,7 @@ gameScene.init = function() {
     },
     {
       key: 'Naturalcapital',
+      id: 27,
       setXY: {
         x: 605,
         y: 330
@@ -347,6 +406,7 @@ gameScene.init = function() {
     },
     {
       key: 'Naturalresources',
+      id: 28,
       setXY: {
         x: 605,
         y: 480
@@ -360,6 +420,7 @@ gameScene.init = function() {
     },
     {
       key: 'Physicalandbiologicallimitsoftheearth',
+      id: 29,
       setXY: {
         x: 605,
         y: 380
@@ -373,6 +434,7 @@ gameScene.init = function() {
     },
     {
       key: 'Prosperouseconomy',
+      id: 30,
       setXY: {
         x: 605,
         y: 455
@@ -386,6 +448,7 @@ gameScene.init = function() {
     },
     {
       key: 'Qualityoflife',
+      id: 31,
       setXY: {
         x: 605,
         y: 430
@@ -393,10 +456,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 350
     },
     {
       key: 'Revenue',
+      id: 32,
       setXY: {
         x: 715,
         y: 330
@@ -410,6 +476,7 @@ gameScene.init = function() {
     },
     {
       key: 'Scenicbeauty',
+      id: 33,
       setXY: {
         x: 605,
         y: 355
@@ -423,6 +490,7 @@ gameScene.init = function() {
     },
     {
       key: 'Self-realization',
+      id: 34,
       setXY: {
         x: 680,
         y: 30
@@ -430,10 +498,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 250
     },
     {
       key: 'Self-respect',
+      id: 35,
       setXY: {
         x: 710,
         y: 430
@@ -441,10 +512,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'wellbeing'
+      answer: 'wellbeing',
+      answerX: 10,
+      answerY: 420
     },
     {
       key: 'Sharedpractices',
+      id: 36,
       setXY: {
         x: 605,
         y: 405
@@ -452,10 +526,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 410,
+      answerY: 550
     },
     {
       key: 'Socialmedia',
+      id: 37,
       setXY: {
         x: 605,
         y: 505
@@ -463,10 +540,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 150,
+      answerY: 440
     },
     {
       key: 'Socialstability',
+      id: 38,
       setXY: {
         x: 605,
         y: 530
@@ -474,10 +554,13 @@ gameScene.init = function() {
       savex: 0,
       savey: 0,
       compass: '',
-      answer: 'society'
+      answer: 'society',
+      answerX: 300,
+      answerY: 440
     },
     {
       key: 'Solarenergy',
+      id: 39,
       setXY: {
         x: 704,
         y: 505
@@ -491,6 +574,7 @@ gameScene.init = function() {
     },
     {
       key: 'Taxes',
+      id: 40,
       setXY: {
         x: 748,
         y: 555
@@ -500,10 +584,11 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 455,
-      answerY: 415
+      answerY: 405
     },
     {
       key: 'Theultimateends',
+      id: 41,
       setXY: {
         x: 605,
         y: 555
@@ -517,6 +602,7 @@ gameScene.init = function() {
     },
     {
       key: 'Theultimatemeans',
+      id: 42,
       setXY: {
         x: 605,
         y: 580
@@ -530,6 +616,7 @@ gameScene.init = function() {
     },
     {
       key: 'Water',
+      id: 43,
       setXY: {
         x: 740,
         y: 305
@@ -543,6 +630,7 @@ gameScene.init = function() {
     },
     {
       key: 'Wealth',
+      id: 44,
       setXY: {
         x: 717,
         y: 530
@@ -618,27 +706,47 @@ gameScene.create = function() {
   //this.showResults( data, data) ;
 
   this.add.image(0, 0, 'compass').setOrigin(0,0);
+  var ht = this.add.text(75, 630, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
   this.items = this.add.group( this.words );
 
   /*console.log( this.words.length );
   for( let i = 0; i < this.words.length; i++ ) {
     console.log(this.words[i].answer);
   }*/
+  let items = this.items.getChildren();
 
-  Phaser.Actions.Call( this.items.getChildren(), function(item) {
+  for( let i = 0; i < this.words.length; i++ ) {
+    items[i].setInteractive();
+    items[i].setOrigin(0,0);
+    this.input.setDraggable(items[i]);
+    items[i].savex = items[i].x;
+    items[i].savey = items[i].y;
+
+
+
+    items[i].ratioNature = (data[i].nature/data[i].total *100).toFixed(0);
+    items[i].ratioEconomy = (data[i].economy/data[i].total*100).toFixed(0);
+    items[i].ratioSociety = (data[i].society/data[i].total*100).toFixed(0);
+    items[i].ratioWellbeing = (data[i].wellbeing/data[i].total*100).toFixed(0);
+
+    console.log(items[i].ratioNature + '   ' + items[i].ratioEconomy +
+     '   ' +items[i].ratioSociety + '   ' + items[i].ratioWellbeing);
+  }
+
+  /*Phaser.Actions.Call( this.items.getChildren(), function(item) {
     item.setInteractive();
     item.setOrigin(0,0);
     this.input.setDraggable(item);
     item.savex = item.x;
     item.savey = item.y;
-  }, this);
+  }, this);*/
 
   //var image18 = this.add.sprite(605, 220, 'Humanrights').setInteractive().setOrigin(0,0);
   //var image19 = this.add.sprite(605, 220, 'Identity').setInteractive().setOrigin(0,0);
   //var image20 = this.add.sprite(605, 220, 'Individualfulfillment').setInteractive().setOrigin(0,0);
   //var image21 = this.add.sprite(605, 220, 'Individualopportunity').setInteractive().setOrigin(0,0);
 
-  const economyResult = this.add.text(0,0, '',  {fill: '#0f0'} );
+  //const economyResult = this.add.text(0,0, '',  {fill: '#0f0'} );
 
   const submitButton = this.add.text(605, 605, 'Submit!', {fill: '#0f0'});
   submitButton.setInteractive();
@@ -666,6 +774,7 @@ gameScene.create = function() {
     this.showResults( data, this.items );
     retryButton.setVisible(true);
     answerButton.setVisible(true);
+    submitted = true;
   }, this );
 
   //transparency tween
@@ -685,12 +794,21 @@ gameScene.create = function() {
     answerButton.setVisible(false);
 
     let items = this.items.getChildren();
-    console.log( this.words.length );
     for( let i = 0; i < this.words.length; i++ ) {
       if( items[i].x < 600 ) {
-        if( this.words[i].answer == items[i].texture.compass) {
+        items[i].x = this.words[i].answerX;
+        items[i].y = this.words[i].answerY;
+
+        resultsText[i].x = this.words[i].answerX;
+        resultsText[i].y = this.words[i].answerY+20;
+        resultsText[i].text = resultsText[i].text.replace( ' also', '');
+
+
+        /*if( this.words[i].answer != items[i].texture.compass) {
           items[i].x = this.words[i].answerX;
           items[i].y = this.words[i].answerY;
+          resultsText[i].x = this.words[i].answerX;
+          resultsText[i].y = this.words[i].answerY+20;
           console.log( 'x -> ' + items[i].x + '  y -> ' + items[i].y );
         } else {
           console.log('NO MATCH');
@@ -709,22 +827,23 @@ gameScene.create = function() {
   retryButton.setInteractive();
   retryButton.setVisible(false);
 
+
   retryButton.on('pointerdown', function(pointer, gameObject)  {
     retryButton.setVisible(false);
     let items = this.items.getChildren();
     for( let i = 0; i < items.length; i++ ) {
-      let tmp = items[i];
       this.input.setDraggable(items[i]);
       items[i].setInteractive(true);
       items[i].x = items[i].savex;
       items[i].y = items[i].savey;
+      items[i].texture.compass = '';
       items[i].input.gameObject.clearTint();
       if( resultsText[i] != null && resultsText[i].setVisible) {
         resultsText[i].setVisible(false);
       }
 
     }
-    console.log('retryButton');
+    submitted = false;
   }, this);
 
 
@@ -734,6 +853,30 @@ gameScene.create = function() {
   this.input.dragDistanceThreshold = 4;
       this.input.on('dragstart', function (pointer, gameObject) {
       gameObject.setTint(0xfff4c6);
+  });
+
+  //set the hover text here
+  this.input.on('pointerover', function(  pointer, gameObject ) {
+
+    if( gameObject[0].x < 600 &&  submitted ) {
+      console.log(gameObject[0]);
+    }
+
+
+    if(gameObject[0].x < 600 && submitted ) {
+
+
+      //console.log( gameObject[0].texture.key + '   ' + gameObject[0].texture.compass );
+      var blah = this.words.find( x => x.key == gameObject[0].texture.key);
+
+      //console.log( resultsText[blah.id].text );
+      ht.setText(gameObject[0].texture.key + ': ' + resultsText[blah.id].text);
+    }
+
+  },this );
+
+  this.input.on('pointerout', function() {
+    ht.setText('');
   });
 
 
@@ -769,6 +912,10 @@ gameScene.create = function() {
 
 };
 
+gameScene.getStats = function( answer, correct ) {
+
+}
+
 //find location of the placed words in the context of the compass
 gameScene.getLocation = function( p1 ) {
   let items = p1.getChildren();
@@ -783,38 +930,29 @@ gameScene.showResults = function( d1, p1 ) {
   var total = 0;
 
   let items = p1.getChildren();
-
+  console.log(items.length);
   for( let i = 0; i < items.length; i++ ) {
     //console.log(items[i].x);
-    if( items[i].x > 600 ) {
+    if( items[i].x > 6000 ) {
+      console.log(">6000");
       // do nothing
     } else if( items[i].texture.compass == 'nature' ) {
-      let temp = Number.parseFloat(d1[i].nature/d1[i].total*100).toPrecision(3);
-      //const natureResult = this.add.text(items[i].x, items[i].y+20, temp +'% also chose nature', {fill: '#f31'});
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, temp +'% also chose Nature',{color: '110,157,73', fontSize:'10px'} );
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioNature +'% also chose Nature',{color: '110,157,73', fontSize:'10px'} );
       if( this.words[i].answer != 'nature' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'economy' ) {
-      let temp = Number.parseFloat(d1[i].economy/d1[i].total*100).toPrecision(3);
-      //economyResult = this.add.text(items[i].x, items[i].y+20, temp +'% also chose economy', {fill: '#f31'});
-      resultsText[i] = gameScene.add.text(items[i].x, items[i].y+20, temp +'% also chose Economy', {fill: '73,111,158', fontSize:'10px'});
-      console.log( items[i].texture.key );
-      console.log( items[i].x + ' ' + items[i].y );
+      resultsText[i] = gameScene.add.text(items[i].x, items[i].y+20, items[i].ratioEconomy +'% also chose Economy', {fill: '73,111,158', fontSize:'10px'});
       if( this.words[i].answer != 'economy' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'society' ) {
-      let temp = Number.parseFloat(d1[i].society/d1[i].total*100).toPrecision(3);
-      //const natureResult = this.add.text(items[i].x, items[i].y+20, temp +'% also chose society', {fill: '#f31'});
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, temp +'% also chose Society',{color: '252,177,64', fontSize:'10px'} );
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioSociety +'% also chose Society',{color: '252,177,64', fontSize:'10px'} );
       if( this.words[i].answer != 'society' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'wellbeing' ) {
-      let temp = Number.parseFloat(d1[i].wellbeing/d1[i].total*100).toPrecision(3);
-      //const natureResult = this.add.text(items[i].x, items[i].y+20, temp +'% also chose wellbeing', {fill: '#f31'});
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, temp +'% also chose Well-being',{color: '239,65,54', fontSize:'10px'} );
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioWellbeing +'% also chose Well-being',{color: '239,65,54', fontSize:'10px'} );
       if( this.words[i].answer != 'wellbeing' ) {
         items[i].setTint(0xb80db5);
       }
