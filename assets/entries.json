@@ -5,7 +5,7 @@
     "economy": 1,
     "society": 2,
     "wellbeing": 3,
-    "total": 48
+    "total": 53
   },
   {
     "entry": "Budgets",
@@ -21,7 +21,7 @@
     "economy": 1,
     "society": 1,
     "wellbeing": 7,
-    "total": 62
+    "total": 64
   },
   {
     "entry": "Community Groups",
@@ -49,314 +49,322 @@
   },
   {
     "entry": "Earth's Materials",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 88,
+    "economy": 7,
+    "society": 3,
+    "wellbeing": 6,
+    "total": 104
   },
   {
     "entry": "Education",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 2,
+    "economy": 11,
+    "society": 77,
+    "wellbeing": 6,
+    "total": 96
   },
   {
     "entry": "Employment",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 1,
+    "economy": 92,
+    "society": 14,
+    "wellbeing": 3,
+    "total": 110
   },
   {
     "entry": "Enlightenment",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 1,
+    "economy": 2,
+    "society": 15,
+    "wellbeing": 80,
+    "total": 98
   },
   {
     "entry": "Equity",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 54,
+    "society": 8,
+    "wellbeing": 11,
+    "total": 76
   },
   {
     "entry": "Factories",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 2,
+    "economy": 99,
+    "society": 11,
+    "wellbeing": 6,
+    "total": 118
   },
   {
     "entry": "Family",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 2,
+    "economy": 5,
+    "society": 68,
+    "wellbeing": 22,
+    "total": 97
   },
   {
     "entry": "Governments",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 1,
+    "economy": 23,
+    "society": 79,
+    "wellbeing": 7,
+    "total": 110
   },
   {
     "entry": "Habitat",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 83,
+    "economy": 2,
+    "society": 14,
+    "wellbeing": 6,
+    "total": 105
   },
   {
     "entry": "Happiness",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 8,
+    "economy": 2,
+    "society": 13,
+    "wellbeing": 96,
+    "total": 119
   },
   {
     "entry": "Health",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 5,
+    "economy": 10,
+    "society": 19,
+    "wellbeing": 67,
+    "total": 101
   },
   {
     "entry": "Human Rights",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 4,
+    "economy": 14,
+    "society": 88,
+    "wellbeing": 23,
+    "total": 127
   },
   {
     "entry": "Identity",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 1,
+    "economy": 4,
+    "society": 6,
+    "wellbeing": 65,
+    "total": 76
   },
   {
     "entry": "Individual Fulfillment",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 10,
+    "society": 18,
+    "wellbeing": 99,
+    "total": 130
   },
   {
     "entry": "Individual Opportunity",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 22,
+    "society": 11,
+    "wellbeing": 92,
+    "total": 128
   },
   {
     "entry": "Jobs and Wages",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 94,
+    "society": 17,
+    "wellbeing": 6,
+    "total": 120
   },
   {
     "entry": "Labor",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 2,
+    "economy": 80,
+    "society": 10,
+    "wellbeing": 5,
+    "total": 97
   },
   {
     "entry": "Land",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 90,
+    "economy": 10,
+    "society": 3,
+    "wellbeing": 7,
+    "total": 110
   },
   {
     "entry": "Legal Frameworks",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 9,
+    "society": 70,
+    "wellbeing": 12,
+    "total": 94
   },
   {
     "entry": "Leisure",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 10,
+    "economy": 10,
+    "society": 20,
+    "wellbeing": 80,
+    "total": 120
   },
   {
     "entry": "Markets",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 4,
+    "economy": 90,
+    "society": 12,
+    "wellbeing": 8,
+    "total": 114
   },
   {
     "entry": "Natural Capital",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 88,
+    "economy": 11,
+    "society": 2,
+    "wellbeing": 9,
+    "total": 110
   },
   {
     "entry": "Natural Resources",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 120,
+    "economy": 15,
+    "society": 10,
+    "wellbeing": 5,
+    "total": 150
   },
   {
     "entry": "P&B limits of the Earth",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 74,
+    "economy": 18,
+    "society": 7,
+    "wellbeing": 11,
+    "total": 110
   },
   {
     "entry": "Prosperous Economy",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 7,
+    "economy": 150,
+    "society": 20,
+    "wellbeing": 10,
+    "total": 187
   },
   {
     "entry": "Quality of Life",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 7,
+    "economy": 20,
+    "society": 13,
+    "wellbeing": 120,
+    "total": 160
   },
   {
     "entry": "Revenue",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 4,
+    "economy": 113,
+    "society": 17,
+    "wellbeing": 10,
+    "total": 144
   },
   {
     "entry": "Scenic Beauty",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 180,
+    "economy": 11,
+    "society": 17,
+    "wellbeing": 33,
+    "total": 241
   },
   {
     "entry": "Self-realization",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 7,
+    "economy": 2,
+    "society": 12,
+    "wellbeing": 88,
+    "total": 109
   },
   {
     "entry": "Self-respect",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 2,
+    "society": 10,
+    "wellbeing": 100,
+    "total": 115
   },
   {
     "entry": "Shared Practices",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 5,
+    "economy": 20,
+    "society": 80,
+    "wellbeing": 11,
+    "total": 116
   },
   {
     "entry": "Social Media",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 12,
+    "society": 133,
+    "wellbeing": 20,
+    "total": 168
   },
   {
     "entry": "Social Stability",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 5,
+    "economy": 15,
+    "society": 60,
+    "wellbeing": 8,
+    "total": 88
   },
   {
     "entry": "Solar Energy",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 90,
+    "economy": 15,
+    "society": 5,
+    "wellbeing": 10,
+    "total": 120
   },
   {
     "entry": "Taxes",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 3,
+    "economy": 110,
+    "society": 20,
+    "wellbeing": 10,
+    "total": 143
   },
   {
     "entry": "The Ultimage Ends",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 70,
+    "economy": 9,
+    "society": 20,
+    "wellbeing": 13,
+    "total": 102
   },
   {
     "entry": "The Ultimate Means",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 60,
+    "economy": 20,
+    "society": 9,
+    "wellbeing": 13,
+    "total": 102
+  },
+  {
+    "entry": "Water",
+    "nature": 144,
+    "economy": 12,
+    "society": 18,
+    "wellbeing": 26,
+    "total": 200
   },
   {
     "entry": "Wealth",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 7,
+    "economy": 110,
+    "society": 20,
+    "wellbeing": 10,
+    "total": 147
   },
   {
     "entry": "WECaG",
-    "nature": 0,
-    "economy": 0,
-    "society": 0,
-    "wellbeing": 0,
-    "total": 1
+    "nature": 100,
+    "economy": 5,
+    "society": 10,
+    "wellbeing": 20,
+    "total": 135
   }
 ]
