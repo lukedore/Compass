@@ -3,6 +3,7 @@
 let gameScene = new Phaser.Scene('Game');
 
 let resultsText = [50];
+let results = [50];
 
 gameScene.init = function() {
   submitted = false;
@@ -18,8 +19,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 33,
-      answerY: 5,
-      hoverText: 'mouse over text 789%'
+      answerY: 5
     },
     {
       key: 'Budgets',
@@ -33,8 +33,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 520,
-      answerY: 50,
-      hoverText: '444'
+      answerY: 50
     },
     {
       key: 'Cleanair',
@@ -48,8 +47,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 166,
-      answerY: 5,
-      hoverText: '2343242'
+      answerY: 5
     },
     {
       key: 'Communitygroups',
@@ -63,8 +61,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'society',
       answerX: 90,
-      answerY: 520,
-      hoverText: 'asdfasdf'
+      answerY: 520
     },
     {
       key: 'Culturaltraditions',
@@ -78,8 +75,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'society',
       answerX: 335,
-      answerY: 520,
-      hoverText: 'sadfasdf'
+      answerY: 520
     },
     {
       key: 'Development',
@@ -93,8 +89,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'economy',
       answerX: 455,
-      answerY: 150,
-      hoverText: '234sdfsdf'
+      answerY: 150
     },
     {
       key: 'Earthsmaterials',
@@ -569,8 +564,8 @@ gameScene.init = function() {
       savey: 0,
       compass: '',
       answer: 'nature',
-      answerX: 165,
-      answerY: 130
+      answerX: 230,
+      answerY: 180
     },
     {
       key: 'Taxes',
@@ -598,7 +593,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 120,
-      answerY: 95
+      answerY: 90
     },
     {
       key: 'Theultimatemeans',
@@ -612,7 +607,7 @@ gameScene.init = function() {
       compass: '',
       answer: 'nature',
       answerX: 270,
-      answerY: 95
+      answerY: 90
     },
     {
       key: 'Water',
@@ -641,6 +636,20 @@ gameScene.init = function() {
       answer: 'economy',
       answerX: 490,
       answerY: 445
+    },
+    {
+      key: 'Whereeverythingcomesfromandgoes',
+      id: 45,
+      setXY: {
+        x: 605,
+        y: 380
+      },
+      savex: 0,
+      savey: 0,
+      compass: '',
+      answer: 'nature',
+      answerX: 140,
+      answerY: 120
     }
   ];
 }
@@ -706,7 +715,10 @@ gameScene.create = function() {
   //this.showResults( data, data) ;
 
   this.add.image(0, 0, 'compass').setOrigin(0,0);
-  var ht = this.add.text(75, 630, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
+  var ht = this.add.text(75, 605, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
+  var ht1 = this.add.text(75, 630, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
+  var ht2 = this.add.text(75, 655, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
+  var ht3 = this.add.text(75, 680, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
   this.items = this.add.group( this.words );
 
   /*console.log( this.words.length );
@@ -729,8 +741,7 @@ gameScene.create = function() {
     items[i].ratioSociety = (data[i].society/data[i].total*100).toFixed(0);
     items[i].ratioWellbeing = (data[i].wellbeing/data[i].total*100).toFixed(0);
 
-    console.log(items[i].ratioNature + '   ' + items[i].ratioEconomy +
-     '   ' +items[i].ratioSociety + '   ' + items[i].ratioWellbeing);
+    //console.log(items[i].ratioNature + '   ' + items[i].ratioEconomy + '   ' +items[i].ratioSociety + '   ' + items[i].ratioWellbeing);
   }
 
   /*Phaser.Actions.Call( this.items.getChildren(), function(item) {
@@ -802,23 +813,6 @@ gameScene.create = function() {
         resultsText[i].x = this.words[i].answerX;
         resultsText[i].y = this.words[i].answerY+20;
         resultsText[i].text = resultsText[i].text.replace( ' also', '');
-
-
-        /*if( this.words[i].answer != items[i].texture.compass) {
-          items[i].x = this.words[i].answerX;
-          items[i].y = this.words[i].answerY;
-          resultsText[i].x = this.words[i].answerX;
-          resultsText[i].y = this.words[i].answerY+20;
-          console.log( 'x -> ' + items[i].x + '  y -> ' + items[i].y );
-        } else {
-          console.log('NO MATCH');
-        }
-        /*console.log( items[i].x);
-        console.log( this.words[i].answer );
-        items[i].setTint(0x6e9d49);
-        items[i].x = 230;
-        items[i].y = 15;
-        items[i].setDepth(2);*/
       }
     }
   }, this );
@@ -830,6 +824,7 @@ gameScene.create = function() {
 
   retryButton.on('pointerdown', function(pointer, gameObject)  {
     retryButton.setVisible(false);
+    answerButton.setVisible(false);
     let items = this.items.getChildren();
     for( let i = 0; i < items.length; i++ ) {
       this.input.setDraggable(items[i]);
@@ -857,26 +852,66 @@ gameScene.create = function() {
 
   //set the hover text here
   this.input.on('pointerover', function(  pointer, gameObject ) {
-
-    if( gameObject[0].x < 600 &&  submitted ) {
-      console.log(gameObject[0]);
-    }
-
+    let items = this.items.getChildren();
 
     if(gameObject[0].x < 600 && submitted ) {
-
+      console.log( gameObject[0].texture.key + '  ' + gameObject[0].x + '  ' + gameObject[0].y );
 
       //console.log( gameObject[0].texture.key + '   ' + gameObject[0].texture.compass );
       var blah = this.words.find( x => x.key == gameObject[0].texture.key);
 
       //console.log( resultsText[blah.id].text );
-      ht.setText(gameObject[0].texture.key + ': ' + resultsText[blah.id].text);
+      //ht.setText(gameObject[0].texture.key + ': ' + resultsText[blah.id].text);
+      ht.setText( gameObject[0].texture.key + ' matches ' + results[blah.id]);
+
+      if(gameObject[0].texture.compass == 'nature'  ) {
+        ht.setTint(0x6e9d49);
+        ht1.setTint(0x496f9e);
+        ht2.setTint(0xfcb140);
+        ht3.setTint(0xef4136);
+        ht.setText( gameObject[0].texture.key + ' matches ' + items[blah.id].ratioNature + '%');
+        ht1.setText( items[blah.id].ratioEconomy + '% chose economy');
+        ht2.setText( items[blah.id].ratioSociety + '% chose society');
+        ht3.setText( items[blah.id].ratioWellbeing + '% chose wellbeing');
+      } else if(gameObject[0].texture.compass == 'economy'  ) {
+        ht.setTint(0x496f9e);
+        ht1.setTint(0x6e9d49);
+        ht2.setTint(0xfcb140);
+        ht3.setTint(0xef4136);
+        ht.setText( gameObject[0].texture.key + ' matches ' + items[blah.id].ratioEconomy + '%');
+        ht1.setText( items[blah.id].ratioNature + '% chose nature');
+        ht2.setText( items[blah.id].ratioSociety + '% chose society');
+        ht3.setText( items[blah.id].ratioWellbeing + '% chose wellbeing');
+      } else if(gameObject[0].texture.compass == 'society'  ) {
+        ht.setTint(0xfcb140);
+        ht1.setTint(0x6e9d49);
+        ht2.setTint(0x496f9e);
+        ht3.setTint(0xef4136);
+        ht.setText( gameObject[0].texture.key + ' matches ' + items[blah.id].ratioSociety + '%');
+        ht1.setText( items[blah.id].ratioNature + '% chose nature');
+        ht2.setText( items[blah.id].ratioEconomy + '% chose economy');
+        ht3.setText( items[blah.id].ratioWellbeing + '% chose wellbeing');
+      } else if(gameObject[0].texture.compass == 'wellbeing'  ) {
+        ht.setTint(0xef4136);
+        ht1.setTint(0x6e9d49);
+        ht2.setTint(0x496f9e);
+        ht3.setTint(0xfcb140);
+        ht.setText( gameObject[0].texture.key + ' matches ' + items[blah.id].ratioWellbeing + '%');
+        ht1.setText( items[blah.id].ratioNature + '% chose nature');
+        ht2.setText( items[blah.id].ratioEconomy + '% chose economy');
+        ht3.setText( items[blah.id].ratioSociety + '% chose society');
+      }
+
     }
 
   },this );
 
   this.input.on('pointerout', function() {
     ht.setText('');
+    ht1.setText('');
+    ht2.setText('');
+    ht3.setText('');
+
   });
 
 
@@ -933,26 +968,33 @@ gameScene.showResults = function( d1, p1 ) {
   console.log(items.length);
   for( let i = 0; i < items.length; i++ ) {
     //console.log(items[i].x);
+
+
     if( items[i].x > 6000 ) {
       console.log(">6000");
       // do nothing
     } else if( items[i].texture.compass == 'nature' ) {
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioNature +'% also chose Nature',{color: '110,157,73', fontSize:'10px'} );
+      results[i] = items[i].ratioNature +'%';
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioNature +'% of others also chose Nature',{color: '110,157,73', fontSize:'10px'} );
+      resultsText[i].setVisible(false);
       if( this.words[i].answer != 'nature' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'economy' ) {
-      resultsText[i] = gameScene.add.text(items[i].x, items[i].y+20, items[i].ratioEconomy +'% also chose Economy', {fill: '73,111,158', fontSize:'10px'});
+      resultsText[i] = gameScene.add.text(items[i].x, items[i].y+20, items[i].ratioEconomy +'% of others also chose Economy', {fill: '73,111,158', fontSize:'10px'});
+      resultsText[i].setVisible(false);
       if( this.words[i].answer != 'economy' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'society' ) {
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioSociety +'% also chose Society',{color: '252,177,64', fontSize:'10px'} );
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioSociety +'% of others also chose Society',{color: '252,177,64', fontSize:'10px'} );
+      resultsText[i].setVisible(false);
       if( this.words[i].answer != 'society' ) {
         items[i].setTint(0xb80db5);
       }
     } else if( items[i].texture.compass == 'wellbeing' ) {
-      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioWellbeing +'% also chose Well-being',{color: '239,65,54', fontSize:'10px'} );
+      resultsText[i] = gameScene.add.text( items[i].x, items[i].y+20, items[i].ratioWellbeing +'% of others also chose Well-being',{color: '239,65,54', fontSize:'10px'} );
+      resultsText[i].setVisible(false);
       if( this.words[i].answer != 'wellbeing' ) {
         items[i].setTint(0xb80db5);
       }
