@@ -1,9 +1,8 @@
-//var mysql = require('mysql');
-
 let gameScene = new Phaser.Scene('Game');
 
 let resultsText = [50];
 let results = [50];
+var newdata = new Array();
 
 gameScene.init = function() {
   submitted = false;
@@ -704,21 +703,27 @@ gameScene.preload = function() {
     this.load.image('Whereeverythingcomesfromandgoes', 'assets/Whereeverythingcomesfromandgoes.png');
 
     this.load.json('entries', 'assets/entries.json');
+    this.load.json('newentries', 'assets/newentries.json');
+    this.getData();
 }
 
 gameScene.create = function() {
+  //let data = this.cache.json.get('newentries');
+  //let data = this.cache.json.get('newentries');
+  let data = newdata;
 
-  let data = this.cache.json.get('entries');
-  //console.log(data[0].total);
+  //console.log( newdata);
+
+  //console.log(data);
   let stats = false;
 
   //this.showResults( data, data) ;
 
   this.add.image(0, 0, 'compass').setOrigin(0,0);
-  var ht = this.add.text(75, 605, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
-  var ht1 = this.add.text(75, 630, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
-  var ht2 = this.add.text(75, 655, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
-  var ht3 = this.add.text(75, 680, 'Information goes here', {fill: '#FFF', fontSize: '18px'});
+  var ht = this.add.text(75, 605, '', {fill: '#FFF', fontSize: '18px'});
+  var ht1 = this.add.text(75, 630, '', {fill: '#FFF', fontSize: '18px'});
+  var ht2 = this.add.text(75, 655, '', {fill: '#FFF', fontSize: '18px'});
+  var ht3 = this.add.text(75, 680, '', {fill: '#FFF', fontSize: '18px'});
   this.items = this.add.group( this.words );
 
   /*console.log( this.words.length );
@@ -770,7 +775,7 @@ gameScene.create = function() {
     yoyo: true
   });
 
-    //transparency tween
+  //transparency tween
   submitButton.alphaTween = this.tweens.add({
     targets: submitButton,
     alpha: 0.7,
@@ -780,12 +785,15 @@ gameScene.create = function() {
 
   submitButton.on('pointerdown', function(pointer) {
     submitButton.resizeTween.play();
+    submitButton.setVisible(false);
     stats = true;
     this.getLocation( this.items );
     this.showResults( data, this.items );
     retryButton.setVisible(true);
     answerButton.setVisible(true);
     submitted = true;
+
+    this.postAnswers( this.items, data );
   }, this );
 
   //transparency tween
@@ -825,6 +833,7 @@ gameScene.create = function() {
   retryButton.on('pointerdown', function(pointer, gameObject)  {
     retryButton.setVisible(false);
     answerButton.setVisible(false);
+    submitButton.setVisible(true);
     let items = this.items.getChildren();
     for( let i = 0; i < items.length; i++ ) {
       this.input.setDraggable(items[i]);
@@ -846,8 +855,8 @@ gameScene.create = function() {
 
   //  The pointer has to move 16 pixels before it's considered as a drag
   this.input.dragDistanceThreshold = 4;
-      this.input.on('dragstart', function (pointer, gameObject) {
-      gameObject.setTint(0xfff4c6);
+  this.input.on('dragstart', function (pointer, gameObject) {
+    gameObject.setTint(0xfff4c6);
   });
 
   //set the hover text here
@@ -855,7 +864,7 @@ gameScene.create = function() {
     let items = this.items.getChildren();
 
     if(gameObject[0].x < 600 && submitted ) {
-      console.log( gameObject[0].texture.key + '  ' + gameObject[0].x + '  ' + gameObject[0].y );
+      //console.log( gameObject[0].texture.key + '  ' + gameObject[0].x + '  ' + gameObject[0].y );
 
       //console.log( gameObject[0].texture.key + '   ' + gameObject[0].texture.compass );
       var blah = this.words.find( x => x.key == gameObject[0].texture.key);
@@ -917,32 +926,32 @@ gameScene.create = function() {
 
 
   this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
-      gameObject.x = dragX;
-      gameObject.y = dragY;
-      if( dragY > dragX && dragY < (-1.02*dragX +570) ) {
-        //wellbeing
-        gameObject.setTint(0xef4136);
-        gameObject.texture.compass = 'wellbeing';
-      }
-      else if( (dragY < (-1*dragX +564) ) && dragY < dragX ) {
-        //nature
-        gameObject.setTint(0x6e9d49);
-        gameObject.texture.compass = 'nature';
-      }
-      else if(dragY < dragX && (dragY > (-1*dragX +400) ) && dragX < 600 ) {
-        //economy
-        gameObject.setTint(0x496f9e);
-        gameObject.texture.compass = 'economy';
-      }
-      else if( (dragY > (-1*dragX +400) ) && dragY > dragX) {
-        //society
-        gameObject.setTint(0xfcb140);
-        gameObject.texture.compass = 'society';
-      }
-      else {
-        gameObject.clearTint();
-        gameObject.texture.compass = '';
-      }
+    gameObject.x = dragX;
+    gameObject.y = dragY;
+    if( dragY > dragX && dragY < (-1.02*dragX +570) ) {
+      //wellbeing
+      gameObject.setTint(0xef4136);
+      gameObject.texture.compass = 'wellbeing';
+    }
+    else if( (dragY < (-1*dragX +564) ) && dragY < dragX ) {
+      //nature
+      gameObject.setTint(0x6e9d49);
+      gameObject.texture.compass = 'nature';
+    }
+    else if(dragY < dragX && (dragY > (-1*dragX +400) ) && dragX < 600 ) {
+      //economy
+      gameObject.setTint(0x496f9e);
+      gameObject.texture.compass = 'economy';
+    }
+    else if( (dragY > (-1*dragX +400) ) && dragY > dragX) {
+      //society
+      gameObject.setTint(0xfcb140);
+      gameObject.texture.compass = 'society';
+    }
+    else {
+      gameObject.clearTint();
+      gameObject.texture.compass = '';
+    }
   });
 
 };
@@ -965,7 +974,7 @@ gameScene.showResults = function( d1, p1 ) {
   var total = 0;
 
   let items = p1.getChildren();
-  console.log(items.length);
+  //console.log(items.length);
   for( let i = 0; i < items.length; i++ ) {
     //console.log(items[i].x);
 
@@ -1004,6 +1013,72 @@ gameScene.showResults = function( d1, p1 ) {
   }
 }
 
+gameScene.getData = function() {
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var resp =  JSON.parse(this.responseText);
+      //console.log( "THEREKLJ: \n " + resp);
+      newdata = resp;
+    }
+  };
+  xmlhttp.open("GET", "test.php", true);
+  xmlhttp.send();
+}
+
+gameScene.postAnswers = function( p1, data ) {
+  let items = p1.getChildren();
+
+  var send = [];
+
+
+
+
+  for( let i = 0; i < items.length; i++ ) {
+    if( items[i].texture.compass ) {
+      data[i].total++;
+      if( items[i].texture.compass == 'nature' ) {
+        data[i].nature++;
+      } else if( items[i].texture.compass == 'economy' ) {
+        data[i].economy++;
+      } else if( items[i].texture.compass == 'society' ) {
+        data[i].society++;
+      } else if( items[i].texture.compass == 'wellbeing' ) {
+        data[i].wellbeing++;
+      }
+      items[i].ratioNature = (data[i].nature/data[i].total*100).toFixed(0);
+      items[i].ratioEconomy = (data[i].economy/data[i].total*100).toFixed(0);
+      items[i].ratioSociety = (data[i].society/data[i].total*100).toFixed(0);
+      items[i].ratioWellbeing = (data[i].wellbeing/data[i].total*100).toFixed(0);
+
+      send[i] = {
+        name: items[i].texture.key,
+        comp: items[i].texture.compass,
+      }
+    } else {
+      send[i] = {
+        name: items[i].texture.key,
+        comp: '',
+      }
+    }
+
+  }
+  //console.log( send );
+  var myJSON = JSON.stringify(send);
+
+  //console.log( myJSON );
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var resp = this.responseText;
+      //console.log(resp);
+    }
+  };
+  xmlhttp.open("GET", "test.php?data=" + myJSON, true);
+  xmlhttp.send();
+}
+
 gameScene.end = function() {
 
 };
@@ -1012,12 +1087,13 @@ gameScene.end = function() {
 
 
 let config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 700,
-    scene: gameScene,
-    title: 'Compass Sorting Game',
-    pixelArt: false,
+  type: Phaser.AUTO,
+  width: 800,
+  height: 700,
+  scene: gameScene,
+  title: 'Compass Sorting Game',
+  pixelArt: false,
 };
 
 let game = new Phaser.Game(config);
+  //let newentries = this.getData();
